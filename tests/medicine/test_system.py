@@ -14,7 +14,7 @@ def test_medicine_create():
         "app_id" : 100
     }
     logger.info(medicine)
-    response = requests.post("http://127.0.0.1:8030/medicine-service-system/medicines", 
+    response = requests.post("http://127.0.0.1:8030/medicine-service-system/medicines",
         data=json.dumps(medicine))
     logger.info(response.json())
     assert response.status_code == 200

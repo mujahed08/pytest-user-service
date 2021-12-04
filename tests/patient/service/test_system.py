@@ -29,13 +29,14 @@ def test_patient_create():
         "app_id" : 100
     }
     logger.info(patient)
-    response = requests.post("http://127.0.0.1:8030/patient-service-system/patients", 
+    response = requests.post("http://127.0.0.1:8030/patient-service-system/patients",
         data=json.dumps(patient))
     logger.info(response.json())
     assert response.status_code == 200
 
 def test_get_patients():
-    response = requests.get("http://127.0.0.1:8030/patient-service-system/patients?page_number=1&limit=5")
+    response = requests.\
+    get("http://127.0.0.1:8030/patient-service-system/patients?page_number=1&limit=5")
     logger.info(response.json())
     assert response.status_code == 200
 
